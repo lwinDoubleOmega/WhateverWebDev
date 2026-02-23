@@ -1,77 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Simple Layout</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/javaScript/script.js"></script>
+<title>Scentaris</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <a href="index.html"><h2>Edamame</h2></a>
-  <nav>
-    <a href="#">Home</a>
-    <a href="Portfolio.html">Portfolio</a>
-    <a href="Contact.html">Contact</a>
-    <a href="Blog.html">Blog</a>
-  </nav>  
-</header>
+<!-- NAV -->
+<nav>
+    <div><strong>SCENTARIS</strong></div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="/html/services.html">Fragrances</a></li>
+        <li><a href="/html/about.html">About</a></li>
+        <li><a href="/html/contact.html">Contact</a></li>
+    </ul>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>A Minimal, Clean Layout</h1>
-  <p>For Sale</p>
-  <button onclick="start()">Get Started</button>
+    <div class="hero-text">
+        <h1>Essence of Elegance</h1>
+        <button>Explore Fragrances</button>
+    </div>
+    <img src="/images/ulysse-pointcheval--j6LLsAehUo-unsplash.jpg" alt="Perfume">
 </section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="feature-box">
-    <h3>Easy to Edit</h3>
-    <p>Simple and clean code.</p>
-  </div>
-  <div class="feature-box">
-    <h3>Layered PSD</h3>
-    <p>Well organized design.</p>
-  </div>
-  <div class="feature-box">
-    <h3>Ready to Go</h3>
-    <p>Launch your website fast.</p>
-  </div>
+<!-- PRODUCTS -->
+<section class="section">
+    <h2>Featured Products</h2>
+    <div class="products">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539">
+            <h3>Radiance</h3>
+            <p>$120</p>
+            <button onclick="addToCart('Radiance')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
+            <h3>Enclave</h3>
+            <p>$120</p>
+            <button onclick="addToCart('Enclave')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="/images/indexheroPerfume.jpg">
+            <h3>Opulent</h3>
+            <p>$120</p>
+            <button onclick="addToCart('Opulent')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="/images/laura-chouette-4sKdeIMiFEI-unsplash.jpg">
+            <h3>Eclipse</h3>
+            <p>$120</p>
+            <button onclick="addToCart('Eclipse')">Add to Cart</button>
+        </div>
+    </div>
 </section>
 
-<!-- PRIMARY CONTENT -->
-<section class="primary">
-  <h2>Featured Content</h2>
-  <p>This is the main content area.</p>
-  <img src="https://picsum.photos/600/300" alt="featured">
+<!-- ABOUT -->
+<section class="section about">
+    <img src="/images/beautinow-niche-perfume-0sHorINihAI-unsplash.jpg" alt="About Scentaris">
+    <div class="about-text">
+        <h2>About the Brand</h2>
+        <p>Scentaris is a modern fragrance house dedicated to timeless elegance and refined sophistication. Our scents combine emotion, luxury and mystery.</p>
+    </div>
 </section>
 
-<!-- SECONDARY CONTENT -->
-<section class="secondary">
-  <div class="secondary-box">
-    <h3>Secondary Content</h3>
-    <p>Additional information here.</p>
-  </div>
-  <div class="secondary-box">
-    <h3>Secondary Content</h3>
-    <p>More details here.</p>
-  </div>
+<!-- SIGNATURE -->
+<section class="section signature">
+    <div>
+        <h2>Signature Scent Highlight</h2>
+        <p>Introducing Velour — A sensual blend of musk and wild rose.</p>
+    </div>
+    <div class="highlight-box">
+        <h3>Introducing: Velour</h3>
+        <p>A sensual blend of musk and wild rose.</p>
+        <button>Shop Now</button>
+    </div>
 </section>
 
-<!-- CALL TO ACTION -->
-<section class="cta">
-  <h2>Heard Enough?</h2>
-  <p>Start building your website today.</p>
-  <button onclick="join()">Get Started</button>
+<!-- JOURNAL -->
+<section class="section">
+    <h2>Journal</h2>
+    <div class="journal">
+        <div>
+            <img src="/images/birgith-roosipuu-nka_sIQpKEU-unsplash.jpg" width="100%">
+            <h3>The Art of Subtle Scents</h3>
+        </div>
+        <div>
+            <h3>Stay in the scent loop</h3>
+            <p>Exclusive launches & stories.</p>
+            <div class="newsletter">
+                <input type="email" id="email" placeholder="Email address">
+                <button onclick="subscribe()">Subscribe</button>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 Simply. All rights reserved.</p>
+    © 2026 Scentaris. All rights reserved.
 </footer>
 
-<script src="script.js"></script>
+
+
 </body>
 </html>
