@@ -1,63 +1,376 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Products</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../javaScript/script.js"></script>
+<title>Edamame</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-<header>
-  <div>Luxury Perfume</div>
-  <div class="nav-right">
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+<!-- NAV -->
+<nav>
+    <div><strong>Edamame</strong></div>
+    <ul>  
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="html/services.html">Fragrances</a></li>
+        <li><a href="html/about.html">About</a></li>
+        <li><a href="html/contact.html">Contact</a></li>
+    </ul>
+</nav>
 
-    <div class="cart-btn" onclick="toggleCart()">
-      🛒
-      <span class="cart-count" id="cartCount">0</span>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Essence of Elegance</h1>
+        <button>Explore Fragrances</button>
     </div>
+    <img src="/images/ulysse-pointcheval--j6LLsAehUo-unsplash.jpg" alt="Perfume">
+</section>
 
-    <button onclick="toggleDarkMode()">🌙</button>
-  </div>
-</header>
+<!-- PRODUCTS -->
+<section class="featured-products">
+    <h2>   More Products</h2>
+    <div class="product-grid">
+        
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
 
-<h2 style="text-align:center; margin-top:20px;">Our Perfumes</h2>
 
-<div class="products">
 
-  <div class="product">
-    <img src="https://picsum.photos/300?1">
-    <h3>Rose Elegance</h3>
-    <p>$50</p>
-    <button onclick="addToCart('Rose Elegance',50)">Add to Cart</button>
-  </div>
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
 
-  <div class="product">
-    <img src="https://picsum.photos/300?2">
-    <h3>Ocean Breeze</h3>
-    <p>$70</p>
-    <button onclick="addToCart('Ocean Breeze',70)">Add to Cart</button>
-  </div>
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
 
-  <div class="product">
-    <img src="https://picsum.photos/300?3">
-    <h3>Midnight Oud</h3>
-    <p>$90</p>
-    <button onclick="addToCart('Midnight Oud',90)">Add to Cart</button>
-  </div>
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
 
-</div>
 
-<!-- CART PANEL -->
-<div class="cart-panel" id="cartPanel">
-  <h3>Your Cart</h3>
-  <div id="cartItems"></div>
-  <div class="total">Total: $<span id="totalPrice">0</span></div>
-  <button onclick="checkout()">Checkout</button>
-</div>
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+    </div>
+</section>
 
-<script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- PRODUCTS -->
+<section class="featured-products">
+
+    <div class="product-grid">
+        
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+
+
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- PRODUCTS -->
+<section class="featured-products">
+
+    <div class="product-grid">
+        
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+
+
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+
+        <div class="product-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/radiance.jpg" alt="Radiance" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">RADIANCE</p>
+                        <p>Luxury Scent</p>
+                        <small>Click to see details</small>
+                    </div>
+                </div>
+            </div>
+            <h3 class="product-name">Radiance</h3>
+            <p class="price">$120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- ABOUT -->
+<section class="section about">
+    <img src="/images/beautinow-niche-perfume-0sHorINihAI-unsplash.jpg" alt="About Scentaris">
+    <div class="about-text">
+        <h2>About the Brand</h2>
+        <p>Scentaris is a modern fragrance house dedicated to timeless elegance and refined sophistication. Our scents combine emotion, luxury and mystery.</p>
+    </div>
+</section>
+
+
+
+
+
+<footer>
+    © 2026 Edamame. All rights reserved.
+</footer>
+
+
+
 </body>
 </html>
