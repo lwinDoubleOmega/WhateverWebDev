@@ -1,0 +1,236 @@
+/* Dark Mode Styles */
+
+/* Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.theme-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.2);
+}
+
+.theme-toggle.icon-spin i {
+    animation: spin 0.6s ease-in-out;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+body.dark-mode nav .theme-toggle {
+    color: #f3eee7;
+}
+
+/* Dark Mode - General */
+body.dark-mode {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* Navigation */
+nav {
+    transition: all 0.3s ease;
+}
+
+body.dark-mode nav {
+    background: #2a2a2a;
+    border-bottom: 1px solid #444;
+}
+
+body.dark-mode nav a {
+    color: #e0e0e0;
+}
+
+body.dark-mode nav a:hover,
+body.dark-mode nav a.active {
+    color: #d4a574;
+}
+
+/* Hero Section */
+body.dark-mode .hero {
+    background: #222;
+}
+
+body.dark-mode .hero h1,
+body.dark-mode .hero h2 {
+    color: #f3eee7;
+}
+
+/* Product Cards and Flip Cards */
+body.dark-mode .product-card {
+    background: #2a2a2a;
+}
+
+body.dark-mode .flip-card-front,
+body.dark-mode .flip-card-back {
+    background: #2a2a2a;
+}
+
+body.dark-mode .flip-card-back {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .flip-card-back p {
+    color: #e0e0e0;
+}
+
+/* Featured Products Section */
+body.dark-mode .featured-products {
+    background: #1a1a1a;
+}
+
+body.dark-mode .featured-products h2 {
+    color: #f3eee7;
+}
+
+/* Sections */
+body.dark-mode .about-section,
+body.dark-mode .services-section,
+body.dark-mode .contact-section {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h1 {
+    color: #f3eee7;
+}
+
+/* Backgrounds */
+body.dark-mode .about-hero,
+body.dark-mode .hero {
+    background: #222;
+}
+
+body.dark-mode .values {
+    background: #222;
+}
+
+body.dark-mode .value-card {
+    background: #2a2a2a;
+    border: 1px solid #444;
+}
+
+body.dark-mode .team {
+    background: #1a1a1a;
+}
+
+body.dark-mode .team-card {
+    background: #2a2a2a;
+    border: 1px solid #444;
+}
+
+/* Forms */
+body.dark-mode .contact-form,
+body.dark-mode form {
+    background: #2a2a2a;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #999;
+}
+
+body.dark-mode label {
+    color: #e0e0e0;
+}
+
+/* Buttons */
+body.dark-mode button,
+body.dark-mode .btn {
+    background: #a88b6a;
+    color: #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode button:hover,
+body.dark-mode .btn:hover {
+    background: #c9b89a;
+}
+
+/* Text and Links */
+body.dark-mode a {
+    color: #d4a574;
+}
+
+body.dark-mode a:hover {
+    color: #e0c9a0;
+}
+
+/* Specific Pages */
+
+/* Services/Fragrances Page */
+body.dark-mode .service-card {
+    background: #2a2a2a;
+    border: 1px solid #444;
+}
+
+body.dark-mode .service-card h3 {
+    color: #f3eee7;
+}
+
+/* Footer and Other Elements */
+body.dark-mode footer {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-top: 1px solid #444;
+}
+
+/* Intensity Value Display (for own_signature_scent.html) */
+body.dark-mode .intensity-display {
+    background: #333;
+    color: #f3eee7;
+    border: 1px solid #555;
+}
+
+/* Result Box */
+body.dark-mode #resultBox {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+body.dark-mode #resultSection {
+    background: #1a1a1a;
+}
+
+/* Smooth Transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Preserve transition times for interactive elements */
+input, textarea, button, a, nav {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
