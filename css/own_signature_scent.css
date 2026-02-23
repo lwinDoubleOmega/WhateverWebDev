@@ -1,0 +1,101 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f3eee7;
+    color:#333;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:#f8f4ef;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+}
+
+.builder{
+    max-width:600px;
+    margin:80px auto;
+    padding:40px;
+    background:#ffffff;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.builder h1{
+    font-family:'Playfair Display', serif;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.form-group{
+    margin-bottom:20px;
+    display:flex;
+    flex-direction:column;
+}
+
+label{
+    margin-bottom:5px;
+}
+
+input, select{
+    padding:10px;
+    border:1px solid #ccc;
+}
+
+button{
+    padding:12px;
+    background:#333;
+    color:white;
+    border:none;
+    cursor:pointer;
+    width:100%;
+}
+
+button:hover{
+    background:#a88b6a;
+}
+
+.result{
+    max-width:600px;
+    margin:40px auto;
+    padding:30px;
+    background:#e8dccd;
+    display:none;
+}
+
+#resultBox{
+    margin-top:15px;
+}
+
+#orderButton{
+    margin-top:20px;
+    background:#333;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+    
+}
+
+@media(max-width:768px){
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+}

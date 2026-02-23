@@ -140,6 +140,13 @@ nav a:hover{
     padding:40px;
 }
 
+.highlight-box button{
+    padding:10px 20px;
+    border:none;
+    background:#333;
+    color:white;
+    cursor:pointer;
+}
 /* JOURNAL */
 .journal{
     display:grid;
