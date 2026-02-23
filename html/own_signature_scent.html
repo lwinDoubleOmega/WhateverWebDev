@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Your Perfume | Scentaris</title>
+<link rel="stylesheet" href="create.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/own_signature_scent.css">
+<script src="../javaScript/own_signature_scent.js"></script>
+
+
+</head>
+<body>
+
+<nav>
+    <div class="logo">SCENTARIS</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Fragrances</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="builder">
+
+    <h1>Create Your Signature Scent</h1>
+
+    <div class="form-group">
+        <label>Perfume Name</label>
+        <input type="text" id="perfumeName" placeholder="Enter your perfume name">
+    </div>
+
+    <div class="form-group">
+        <label>Top Notes</label>
+        <select id="topNote">
+            <option value="Citrus">Citrus</option>
+            <option value="Bergamot">Bergamot</option>
+            <option value="Lavender">Lavender</option>
+            <option value="Mint">Mint</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Heart Notes</label>
+        <select id="heartNote">
+            <option value="Rose">Rose</option>
+            <option value="Jasmine">Jasmine</option>
+            <option value="Vanilla">Vanilla</option>
+            <option value="Peony">Peony</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Base Notes</label>
+        <select id="baseNote">
+            <option value="Musk">Musk</option>
+            <option value="Amber">Amber</option>
+            <option value="Sandalwood">Sandalwood</option>
+            <option value="Oud">Oud</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Intensity</label>
+        <input type="range" id="intensity" min="1" max="5" value="3">
+        <span id="intensityValue">3</span>
+    </div>
+
+    <button onclick="createPerfume()">Create Perfume</button>
+
+</section>
+
+<section class="result" id="resultSection">
+    <h2>Your Custom Perfume</h2>
+    <div id="resultBox"></div>
+    <button id="orderButton" onclick="orderPerfume()">Order Your Creation</button>
+</section>
+
+<script src="create.js"></script>
+</body>
+</html>
