@@ -3,17 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | Scentaris</title>
+<title>Contact Us|EDAMAME</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/about.css">
-<script src="../javaScript/about.js"></script>
+<link rel="stylesheet" href="../css/contact.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<script src="../javaScript/contact_us.js"></script>
+
 </head>
 <body>
 
 <!-- NAVIGATION -->
 <nav>
-    <div class="logo">SCENTARIS</div>
+    <div class="logo">EDAMAME</div>
     <ul>
         <li><a href="../index.html">Home</a></li>
         <li><a href="services.html">Fragrances</a></li>
@@ -22,69 +24,48 @@
     </ul>
 </nav>
 
-<!-- HERO -->
-<section class="about-hero">
-    <h1>Our Story</h1>
-    <p>Crafting timeless fragrances inspired by elegance and emotion.</p>
+<section class="contact-section">
+    <form class="contact-form">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+        </div>
+
+        <div class="button-container">
+            <button type="submit" onclick="contactUs()" class="send-btn">Send</button>
+        </div>
+    </form>
 </section>
 
-<!-- BRAND STORY -->
-<section class="about-section">
-    <div class="about-container">
-        <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144" alt="Perfume">
-        <div>
-            <h2>The Beginning</h2>
-            <p>
-                Founded with a passion for refinement, Scentaris was created to
-                celebrate individuality through scent. Each fragrance is carefully
-                crafted using premium ingredients sourced from around the world.
-            </p>
-            <p>
-                Our philosophy is simple — elegance should feel effortless and
-                unforgettable.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- VALUES -->
-<section class="values">
-    <h2>Our Values</h2>
-    <div class="value-grid">
-        <div class="value-card">
-            <h3>Luxury</h3>
-            <p>We design every scent with sophistication and premium quality.</p>
-        </div>
-        <div class="value-card">
-            <h3>Authenticity</h3>
-            <p>Each fragrance tells a genuine story of artistry and passion.</p>
-        </div>
-        <div class="value-card">
-            <h3>Craftsmanship</h3>
-            <p>Blending tradition and modern innovation in perfumery.</p>
-        </div>
-    </div>
-</section>
-
-<!-- TEAM -->
-<section class="team">
-    <h2>Meet Our Creative Director</h2>
-    <div class="team-container">
-        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Director">
-        <div>
-            <p>
-                Our creative director brings over 15 years of expertise in fragrance
-                development, shaping Scentaris into a symbol of modern elegance.
-            </p>
-            <button onclick="showMessage()">Learn More</button>
-        </div>
-    </div>
-</section>
-
+<!-- Footer-->
 <footer>
-    © 2026 Scentaris. All rights reserved.
+    <div class="social">
+        <h2 class="contact-me">Contact <span>Us</span></h2>
+        <div class="icon-container">
+            <a href="https://www.facebook.com/..." class="meta-link"><i class='bx bxl-meta'></i></a>
+            <a href="mailto:...@gmail.com"><i class='bx bx-envelope'></i></a>
+            <a href="tel:+....."><i class='bx bx-phone-call'></i></a>
+            <a href="https://www.instagram.com/......"><i class='bx bxl-instagram-alt'></i></a>
+        </div>
+    </div>
+    <p class="copyright">&copy; 2026 EDAMAME. All rights reserved.</p>
 </footer>
 
-<script src="about.js"></script>
 </body>
 </html>

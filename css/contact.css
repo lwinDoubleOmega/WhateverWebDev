@@ -1,0 +1,166 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f3eee7;
+    color:#333;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 80px;
+    background:#f8f4ef;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:40px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+
+nav a.active{
+    color:#a88b6a;
+}
+
+nav a:hover{
+    color:#a88b6a;
+}
+
+/* Contact Form Styles */
+.contact-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #333;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.send-btn {
+    background-color: #8b4513; /* Matches the brown in your image */
+    color: white;
+    padding: 12px 60px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.send-btn:hover {
+    background-color: #a88b6a; /* Matches your brand accent color */
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#f8f4ef;
+    margin-top:50px;
+}
+
+/* Layout for the icons */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 2rem;
+}
+
+.icon-container a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: #000; /* Default black */
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hover Effect - Turns blue */
+.icon-container a:hover {
+    color: #a88b6a;
+}
+
+/* Icon Circle Style */
+.soical-link i {
+    padding: 8px;
+    border: 2.5px solid transparent;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.social-link:hover i {
+    border-color: #a88b6a;
+}
+
+.contact-me {
+    font-family: 'Playfair Display', serif; /* Using that font you imported */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.contact-me span {
+    color: #a88b6a; /* Matching your 'active' nav color for consistency */
+}
+
+.copyright {
+    font-size: 13px;
+    color: #888;
+    margin-top: 20px;
+}
