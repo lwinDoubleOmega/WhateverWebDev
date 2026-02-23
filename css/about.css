@@ -1,0 +1,149 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f3eee7;
+    color:#333;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 80px;
+    background:#f8f4ef;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:40px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+
+nav a.active{
+    color:#a88b6a;
+}
+
+nav a:hover{
+    color:#a88b6a;
+}
+
+/* HERO */
+.about-hero{
+    text-align:center;
+    padding:100px 20px;
+    background:#e8dccd;
+}
+
+.about-hero h1{
+    font-family:'Playfair Display', serif;
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+/* SECTIONS */
+.about-section{
+    padding:80px 100px;
+}
+
+.about-container{
+    display:flex;
+    align-items:center;
+    gap:50px;
+}
+
+.about-container img{
+    width:350px;
+}
+
+.about-container h2{
+    font-family:'Playfair Display', serif;
+    margin-bottom:15px;
+}
+
+/* VALUES */
+.values{
+    padding:80px 100px;
+    background:#fff;
+    text-align:center;
+}
+
+.values h2{
+    font-family:'Playfair Display', serif;
+    margin-bottom:40px;
+}
+
+.value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.value-card{
+    padding:30px;
+    background:#e8dccd;
+}
+
+/* TEAM */
+.team{
+    padding:80px 100px;
+}
+
+.team h2{
+    font-family:'Playfair Display', serif;
+    margin-bottom:40px;
+    text-align:center;
+}
+
+.team-container{
+    display:flex;
+    gap:40px;
+    align-items:center;
+}
+
+.team-container img{
+    width:300px;
+}
+
+.team button{
+    padding:10px 20px;
+    border:none;
+    background:#333;
+    color:white;
+    cursor:pointer;
+}
+
+.team button:hover{
+    background:#a88b6a;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    background:#f8f4ef;
+    margin-top:50px;
+}
+
+@media(max-width:900px){
+    .about-container,
+    .team-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .value-grid{
+        grid-template-columns:1fr;
+    }
+}

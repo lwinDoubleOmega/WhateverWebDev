@@ -1,77 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Simple Layout</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Scentaris</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/about.css">
+<script src="/javaScript/about.js"></script>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <h2>Edamame</h2>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="Portfolio.html">Portfolio</a>
-    <a href="Contact.html">Contact</a>
-    <a href="Blog.html">Blog</a>
-  </nav>  
-</header>
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">SCENTARIS</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Fragrances</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>A Minimal, Clean Layout</h1>
-  <p>For Sale</p>
-  <button onclick="start()">Get Started</button>
+<section class="about-hero">
+    <h1>Our Story</h1>
+    <p>Crafting timeless fragrances inspired by elegance and emotion.</p>
 </section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="feature-box">
-    <h3>Easy to Edit</h3>
-    <p>Simple and clean code.</p>
-  </div>
-  <div class="feature-box">
-    <h3>Layered PSD</h3>
-    <p>Well organized design.</p>
-  </div>
-  <div class="feature-box">
-    <h3>Ready to Go</h3>
-    <p>Launch your website fast.</p>
-  </div>
+<!-- BRAND STORY -->
+<section class="about-section">
+    <div class="about-container">
+        <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144" alt="Perfume">
+        <div>
+            <h2>The Beginning</h2>
+            <p>
+                Founded with a passion for refinement, Scentaris was created to
+                celebrate individuality through scent. Each fragrance is carefully
+                crafted using premium ingredients sourced from around the world.
+            </p>
+            <p>
+                Our philosophy is simple — elegance should feel effortless and
+                unforgettable.
+            </p>
+        </div>
+    </div>
 </section>
 
-<!-- PRIMARY CONTENT -->
-<section class="primary">
-  <h2>Featured Content</h2>
-  <p>This is the main content area.</p>
-  <img src="https://picsum.photos/600/300" alt="featured">
+<!-- VALUES -->
+<section class="values">
+    <h2>Our Values</h2>
+    <div class="value-grid">
+        <div class="value-card">
+            <h3>Luxury</h3>
+            <p>We design every scent with sophistication and premium quality.</p>
+        </div>
+        <div class="value-card">
+            <h3>Authenticity</h3>
+            <p>Each fragrance tells a genuine story of artistry and passion.</p>
+        </div>
+        <div class="value-card">
+            <h3>Craftsmanship</h3>
+            <p>Blending tradition and modern innovation in perfumery.</p>
+        </div>
+    </div>
 </section>
 
-<!-- SECONDARY CONTENT -->
-<section class="secondary">
-  <div class="secondary-box">
-    <h3>Secondary Content</h3>
-    <p>Additional information here.</p>
-  </div>
-  <div class="secondary-box">
-    <h3>Secondary Content</h3>
-    <p>More details here.</p>
-  </div>
+<!-- TEAM -->
+<section class="team">
+    <h2>Meet Our Creative Director</h2>
+    <div class="team-container">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Director">
+        <div>
+            <p>
+                Our creative director brings over 15 years of expertise in fragrance
+                development, shaping Scentaris into a symbol of modern elegance.
+            </p>
+            <button onclick="showMessage()">Learn More</button>
+        </div>
+    </div>
 </section>
 
-<!-- CALL TO ACTION -->
-<section class="cta">
-  <h2>Heard Enough?</h2>
-  <p>Start building your website today.</p>
-  <button onclick="join()">Get Started</button>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 Simply. All rights reserved.</p>
+    © 2026 Scentaris. All rights reserved.
 </footer>
 
-<script src="script.js"></script>
+<script src="about.js"></script>
 </body>
 </html>
