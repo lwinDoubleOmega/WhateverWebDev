@@ -4,12 +4,7 @@
     box-sizing:border-box;
 }
 
-body{
-    font-family:'Poppins', sans-serif;
-    background:#f3eee7;
-    color:#333;
-}
-
+/* NAVIGATION */
 nav{
     display:flex;
     justify-content:space-between;
@@ -21,11 +16,27 @@ nav{
 nav ul{
     display:flex;
     list-style:none;
-    gap:30px;
+    gap:40px;
+}
+
+nav a.active{
+    color:#a88b6a;
 }
 
 nav a{
     text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#a88b6a;
+}
+
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f3eee7;
     color:#333;
 }
 
@@ -58,7 +69,8 @@ input, select{
     border:1px solid #ccc;
 }
 
-button{
+.builder button,
+#orderButton {
     padding:12px;
     background:#333;
     color:white;
@@ -67,7 +79,8 @@ button{
     width:100%;
 }
 
-button:hover{
+.builder button:hover,
+#orderButton:hover {
     background:#a88b6a;
 }
 
@@ -94,8 +107,9 @@ button:hover{
 }
 
 @media(max-width:768px){
-    nav{
-        flex-direction:column;
-        gap:10px;
+    /* page-specific responsive tweaks */
+    .builder{
+        margin:40px 20px;
+        padding:20px;
     }
 }

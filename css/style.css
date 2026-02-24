@@ -53,6 +53,7 @@ nav a:hover{
     font-family:'Playfair Display', serif;
     font-size:56px;
     margin-bottom:20px;
+    margin-right: 10px;
 }
 
 .hero button{
@@ -79,6 +80,9 @@ nav a:hover{
 }
 
 /* PRODUCTS */
+.moreProjectLabel{
+    margin-left: 30px;
+}
 .products{
     display:grid;
     grid-template-columns:repeat(4,1fr);
