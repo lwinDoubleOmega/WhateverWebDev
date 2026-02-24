@@ -112,12 +112,15 @@ body.dark-mode .contact-section {
 }
 
 body.dark-mode h2,
-body.dark-mode h3,
 body.dark-mode h1,
 body.dark-mode .builder h1 {
     color: #f3eee7;
 }
 
+body.dark-mode .highlight-box h3,
+body.dark-mode .highlight-box p {
+    color: #000;
+    }
 /* Backgrounds */
 body.dark-mode .about-hero,
 body.dark-mode .hero {
