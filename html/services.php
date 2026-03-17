@@ -48,11 +48,12 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
         <div class="nav-icons">
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"><i
                     class="fas fa-moon"></i></button>
-            <a href="profile.php">
-                <div class="profile-icon" aria-label="Profile"><i class="fas fa-circle-user"></i></div>
-            </a>
-        </div>
-        </div>
+            <a href="profile.php"><div class="profile-icon" aria-label="Profile"><i class="fas fa-circle-user"></i></div></a>
+    </div>
+    
+
+</div>
+
     </nav>
 
     <!-- HERO -->
@@ -69,7 +70,7 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
         <h2 class="moreProjectLabel">More Products</h2>
         <div class="product-grid">
 
-            <!--YSL MYSELF-->
+             <!--YSL MYSELF-->
             <?php while ($row = $products_result->fetch_assoc()): ?>
                 <div class="product-card">
                     <div class="flip-card">
@@ -97,9 +98,6 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
 
             <?php endwhile; ?>
 
-
-
-        </div>
     </section>
 
 
@@ -123,6 +121,8 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
         © 2026 Edamame. All rights reserved.
     </footer>
 
+<<<<<<< HEAD
+=======
 
 
     <!-- FLOATING CART BUTTON -->
@@ -246,6 +246,7 @@ function checkout() {
 
 
 
+>>>>>>> 68caf60b44bf2e2b86905a9b7683b0f2a20d1f8c
 </body>
 
 </html>
