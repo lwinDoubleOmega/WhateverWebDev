@@ -15,7 +15,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 $users_result = $conn->query("SELECT id, full_name, email, role FROM users ORDER BY id DESC");
 
 // Fetch total orders
-$orders_result = $conn->query("SELECT COUNT(*) as c FROM orders")->fetch_assoc();
+$orders_result = $conn->query("SELECT * FROM orders ORDER BY id DESC");
 ?>
 
 <!DOCTYPE html>
@@ -258,20 +258,20 @@ $orders_result = $conn->query("SELECT COUNT(*) as c FROM orders")->fetch_assoc()
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Full Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
+                        <th>User ID</th>
+                        <th>Order Status</th>
+                        <th>Payment Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($row = $users_result->fetch_assoc()): ?>
+                    <?php while ($row = $orders_result->fetch_assoc()): ?>
                         <tr>
                             <td><?= $row['id'] ?></td>
-                            <td><?= htmlspecialchars($row['full_name']) ?></td>
-                            <td><?= htmlspecialchars($row['email']) ?></td>
+                            <td><?= $row['user_id'] ?></td>
+                            <td><?= htmlspecialchars($row['order_status']) ?></td>
                             <td>
-                                <span class="badge <?= $row['role'] === 'admin' ? 'badge-admin' : 'badge-user' ?>">
-                                    <?= ucfirst($row['role']) ?>
+                                <span class="badge <?= $row['payment_status'] === 'paid' ? 'badge-admin' : 'badge-user' ?>">
+                                    <?= ucfirst($row['payment_status']) ?>
                                 </span>
                             </td>
                         </tr>
