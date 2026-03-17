@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-include "database.php";
+include "../php/database.php";
 
 header("Content-Type: application/json");
 

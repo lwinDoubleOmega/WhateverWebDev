@@ -1,0 +1,33 @@
+/* Light Mode (default) */
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --box-color: #f4f4f4;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --box-color: #1e1e1e;
+}
+
+/* Apply globally */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s ease;
+}
+
+.box, .card, .container {
+    background: var(--box-color);
+}
+
+.theme-btn {
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: var(--box-color);
+    color: var(--text-color);
+}
