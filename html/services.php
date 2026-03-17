@@ -156,8 +156,20 @@ function toggleCart() {
     document.getElementById("cartPanel").classList.toggle("show");
 }
 
-function addToCart(name, price) {
-    cart.push({ name, price });
+function addToCart(productId, name, price) {
+    const existing = cart.find(item => item.product_id === productId);
+
+    if (existing) {
+        existing.quantity += 1;
+    } else {
+        cart.push({
+            product_id: productId,
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+
     updateCart();
 }
 
@@ -171,47 +183,65 @@ function updateCart() {
     const cartCount = document.getElementById("cartCount");
     const cartTotal = document.getElementById("cartTotal");
 
-    cartCount.textContent = cart.length;
+    let total = 0;
+    let count = 0;
 
     if (cart.length === 0) {
         cartItems.innerHTML = `<p class="empty-cart">Your cart is empty.</p>`;
+        cartCount.textContent = 0;
         cartTotal.textContent = 0;
         return;
     }
 
-    let total = 0;
     cartItems.innerHTML = "";
 
     cart.forEach((item, index) => {
-        total += item.price;
+        const lineTotal = item.price * item.quantity;
+        total += lineTotal;
+        count += item.quantity;
 
         cartItems.innerHTML += `
             <div class="cart-item">
                 <div class="cart-item-info">
                     <strong>${item.name}</strong>
-                    <span>$${item.price}</span>
+                    <span>$${item.price} × ${item.quantity}</span>
                 </div>
-                <button onclick="removeFromCart(${index})">Remove</button>
+                <button type="button" onclick="removeFromCart(${index})">Remove</button>
             </div>
         `;
     });
 
+    cartCount.textContent = count;
     cartTotal.textContent = total;
 }
-
+<script>
 function checkout() {
     if (cart.length === 0) {
         alert("Your cart is empty.");
         return;
     }
 
-    alert("Order placed successfully!");
-    cart = [];
-    updateCart();
-    toggleCart();
+    console.log("Sending cart:", cart);
+
+    fetch("../php/save_cart.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ cart: cart })
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("PHP response:", data);
+        alert(data);
+    })
+    .catch(error => {
+        console.error("Fetch error:", error);
+        alert("Fetch failed. Check console.");
+    });
 }
 </script>
-
+</script>
 
 
 
