@@ -5,11 +5,6 @@ error_reporting(E_ALL);
 session_start();
 include "../php/database.php";
 
-// Only admins allowed
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../html/login.html");
-    exit();
-}
 
 // Fetch all users
 $users_result = $conn->query("SELECT id, full_name, email, role FROM users ORDER BY id DESC");
@@ -52,11 +47,12 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
         <div class="nav-icons">
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"><i
                     class="fas fa-moon"></i></button>
-            <a href="profile.php">
-                <div class="profile-icon" aria-label="Profile"><i class="fas fa-circle-user"></i></div>
-            </a>
-        </div>
-        </div>
+            <a href="profile.php"><div class="profile-icon" aria-label="Profile"><i class="fas fa-circle-user"></i></div></a>
+    </div>
+    
+
+</div>
+
     </nav>
 
     <!-- HERO -->
@@ -73,7 +69,7 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
         <h2 class="moreProjectLabel">More Products</h2>
         <div class="product-grid">
 
-            <!--YSL MYSELF-->
+             <!--YSL MYSELF-->
             <?php while ($row = $products_result->fetch_assoc()): ?>
                 <div class="product-card">
                     <div class="flip-card">
@@ -101,9 +97,6 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
 
             <?php endwhile; ?>
 
-
-
-        </div>
     </section>
 
 
@@ -126,8 +119,6 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
     <footer>
         © 2026 Edamame. All rights reserved.
     </footer>
-
-
 
 </body>
 
