@@ -136,7 +136,7 @@
         <div class="logo"><strong>EDAMAME</strong></div>
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="services.html">Fragrances</a></li>
+            <li><a href="services.php">Fragrances</a></li>
             <li><a href="about.html" class="active">About</a></li>
             <li><a href="Contact.html">Contact Us</a></li>
         </ul>
@@ -148,6 +148,20 @@
             </a>
         </div>
     </nav>
+
+<script>
+  function updateChatTheme() {
+    const isDark = document.body.classList.contains("dark");
+
+    window.botpress.config({
+      configuration: {
+        themeMode: isDark ? "dark" : "light"
+      }
+    });
+  }
+</script>
+
+
 
   <!-- HERO -->
   <section class="hero">
@@ -202,10 +216,8 @@
   </footer>
 
   <!-- BOTPRESS CHAT -->
- <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2026/03/17/07/20260317070411-RXB42I1J.js" defer></script>
-
-
 
 
 </body>

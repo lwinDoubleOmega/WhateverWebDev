@@ -1,0 +1,140 @@
+
+.cart-float {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #a78f7a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+
+.cart-float span {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: #2d2d2d;
+    color: white;
+    font-size: 12px;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-panel {
+    position: fixed;
+    right: 25px;
+    bottom: 110px;
+    width: 340px;
+    background: #f6efe6;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    padding: 18px;
+    display: none;
+    z-index: 9999;
+}
+
+.cart-panel.show {
+    display: block;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cart-header h3 {
+    margin: 0;
+    font-size: 28px;
+    color: #2d2d2d;
+}
+
+.cart-header button {
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    color: #2d2d2d;
+}
+
+.cart-items {
+    max-height: 220px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cart-item-info strong {
+    font-size: 18px;
+    color: #2d2d2d;
+}
+
+.cart-item-info span {
+    font-size: 16px;
+    color: #666;
+}
+
+.cart-item button {
+    border: none;
+    background: #2d2d2d;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cart-footer {
+    border-top: 1px solid #ddd;
+    padding-top: 12px;
+}
+
+.cart-footer p {
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    color: #2d2d2d;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #2d2d2d;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.empty-cart {
+    color: #666;
+    text-align: center;
+    margin: 20px 0;
+}
