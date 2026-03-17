@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/darkmode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../javaScript/darkmode.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo"><strong>EDAMAME</strong></div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="services.html">Fragrances</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-icons">
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+            <div class="profile-icon" aria-label="Profile"><i class="fas fa-circle-user"></i></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Create Account</h2>
+        <form action="../php/process_signup.php" method="post">
+            <input type="text" id="fullname" placeholder="Full Name" name="fullname" required>
+            <input type="email" id="email" placeholder="Email" name="email" required>
+            <input type="password" id="password" placeholder="Password" name="password" required>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirm_password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="login.php">Already have an account? Login</a>
+    </div>
+</body>
+
+</html>

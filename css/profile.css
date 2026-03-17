@@ -1,0 +1,71 @@
+/* ===== PROFILE PAGE ===== */
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+/* CARD */
+.profile-card {
+    width: 350px;
+    padding: 40px;
+    text-align: center;
+    background: transparent;
+}
+
+/* AVATAR */
+.avatar {
+    font-size: 60px;
+    margin-bottom: 15px;
+    color: #8b4513;
+}
+
+/* NAME */
+.profile-card h2 {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* EMAIL */
+.profile-card p {
+    margin: 5px 0 20px;
+    color: #555;
+}
+
+/* INFO BOX */
+.profile-info {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.profile-info div {
+    margin-bottom: 15px;
+}
+
+.profile-info span {
+    font-size: 13px;
+    color: #777;
+}
+
+.profile-info p {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+/* BUTTON */
+.profile-card button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile-card button:hover {
+    background-color: #6f3510;
+}

@@ -1,10 +1,17 @@
 /* Dark Mode Styles */
 
+/* Navigation Icons Container - Align horizontally */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 /* Toggle Button */
 .theme-toggle {
     background: none !important;
     border: none !important;
-    font-size: 18px;
+    font-size: 32px;
     cursor: pointer;
     padding: 8px 12px !important;
     display: flex;
@@ -27,6 +34,26 @@
     animation: spin 0.6s ease-in-out;
 }
 
+/* Profile Icon */
+.profile-icon {
+    font-size: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #333;
+    padding: 8px 12px;
+}
+
+.profile-icon i {
+    transition: transform 0.3s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.2);
+}
+
 @keyframes spin {
     0% {
         transform: rotateZ(0deg);
@@ -37,6 +64,10 @@
 }
 
 body.dark-mode nav .theme-toggle {
+    color: #f3eee7;
+}
+
+body.dark-mode nav .profile-icon {
     color: #f3eee7;
 }
 

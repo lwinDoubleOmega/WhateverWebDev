@@ -1,93 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | Scentaris</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/about.css">
-<link rel="stylesheet" href="../css/darkmode.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="../javaScript/about.js"></script>
-<script src="../javaScript/darkmode.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Scentaris</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/darkmode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../javaScript/about.js"></script>
+    <script src="../javaScript/darkmode.js"></script>
 </head>
+
 <body>
 
-<!-- NAVIGATION -->
-<nav>
-    <div class="logo"><strong>EDAMAME</strong></div>
-    <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="services.html">Fragrances</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="Contact.html">Contact Us</a></li>
-    </ul>
-</nav>
-
-<!-- HERO -->
-<section class="about-hero">
-    <h1>Our Story</h1>
-    <p>Crafting timeless fragrances inspired by elegance and emotion.</p>
-</section>
-
-<!-- BRAND STORY -->
-<section class="about-section">
-    <div class="about-container">
-        <img src="../images/bundo-kim-ur2zmbseUIA-unsplash.jpg" alt="Perfume">
-        <div>
-            <h2>The Beginning</h2>
-            <p>
-                Founded with a passion for refinement, Scentaris was created to
-                celebrate individuality through scent. Each fragrance is carefully
-                crafted using premium ingredients sourced from around the world.
-            </p>
-            <p>
-                Our philosophy is simple — elegance should feel effortless and
-                unforgettable.
-            </p>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo"><strong>EDAMAME</strong></div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="services.html">Fragrances</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-icons">
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"><i
+                    class="fas fa-moon"></i></button>
+            <a href="profile.php">
+                <div class="profile-icon" aria-label="Profile"><i class="fas fa-circle-user"></i></div>
+            </a>
         </div>
-    </div>
-</section>
+    </nav>
 
-<!-- VALUES -->
-<section class="values">
-    <h2>Our Values</h2>
-    <div class="value-grid">
-        <div class="value-card">
-            <h3>Luxury</h3>
-            <p>We design every scent with sophistication and premium quality.</p>
-        </div>
-        <div class="value-card">
-            <h3>Authenticity</h3>
-            <p>Each fragrance tells a genuine story of artistry and passion.</p>
-        </div>
-        <div class="value-card">
-            <h3>Craftsmanship</h3>
-            <p>Blending tradition and modern innovation in perfumery.</p>
-        </div>
-    </div>
-</section>
+    <!-- HERO -->
+    <section class="about-hero">
+        <h1>Our Story</h1>
+        <p>Crafting timeless fragrances inspired by elegance and emotion.</p>
+    </section>
 
-<!-- TEAM -->
-<section class="team">
-    <h2>Meet Our Creative Director</h2>
-    <div class="team-container">
-        <img src="../images/wathan.jpg" alt="Director">
-        <div>
-            <p>
-                Our creative director brings over 15 years of expertise in fragrance
-                development, shaping Scentaris into a symbol of modern elegance.
-            </p>
-            <button onclick="showMessage()">Learn More</button>
+    <!-- BRAND STORY -->
+    <section class="about-section">
+        <div class="about-container">
+            <img src="../images/bundo-kim-ur2zmbseUIA-unsplash.jpg" alt="Perfume">
+            <div>
+                <h2>The Beginning</h2>
+                <p>
+                    Founded with a passion for refinement, Scentaris was created to
+                    celebrate individuality through scent. Each fragrance is carefully
+                    crafted using premium ingredients sourced from around the world.
+                </p>
+                <p>
+                    Our philosophy is simple — elegance should feel effortless and
+                    unforgettable.
+                </p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    © 2026 Edamame. All rights reserved.
-</footer>
+    <!-- VALUES -->
+    <section class="values">
+        <h2>Our Values</h2>
+        <div class="value-grid">
+            <div class="value-card">
+                <h3>Luxury</h3>
+                <p>We design every scent with sophistication and premium quality.</p>
+            </div>
+            <div class="value-card">
+                <h3>Authenticity</h3>
+                <p>Each fragrance tells a genuine story of artistry and passion.</p>
+            </div>
+            <div class="value-card">
+                <h3>Craftsmanship</h3>
+                <p>Blending tradition and modern innovation in perfumery.</p>
+            </div>
+        </div>
+    </section>
 
-<script src="about.js"></script>
+    <!-- TEAM -->
+    <section class="team">
+        <h2>Meet Our Creative Director</h2>
+        <div class="team-container">
+            <img src="../images/wathan.jpg" alt="Director">
+            <div>
+                <p>
+                    Our creative director brings over 15 years of expertise in fragrance
+                    development, shaping Scentaris into a symbol of modern elegance.
+                </p>
+                <button onclick="showMessage()">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Edamame. All rights reserved.
+    </footer>
+
+    <script src="about.js"></script>
 </body>
+
 </html>
