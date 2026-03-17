@@ -5,11 +5,6 @@ error_reporting(E_ALL);
 session_start();
 include "../php/database.php";
 
-// Only admins allowed
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../html/login.html");
-    exit();
-}
 
 // Fetch all users
 $users_result = $conn->query("SELECT id, full_name, email, role FROM users ORDER BY id DESC");
