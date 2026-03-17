@@ -48,12 +48,11 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
         <div class="nav-icons">
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"><i
                     class="fas fa-moon"></i></button>
-            <a href="profile.php"><div class="profile-icon" aria-label="Profile"><i class="fas fa-circle-user"></i></div></a>
-    </div>
-    
-
-</div>
-
+            <a href="profile.php">
+                <div class="profile-icon" aria-label="Profile"><i class="fas fa-circle-user"></i></div>
+            </a>
+        </div>
+        </div>
     </nav>
 
     <!-- HERO -->
@@ -70,7 +69,7 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
         <h2 class="moreProjectLabel">More Products</h2>
         <div class="product-grid">
 
-             <!--YSL MYSELF-->
+            <!--YSL MYSELF-->
             <?php while ($row = $products_result->fetch_assoc()): ?>
                 <div class="product-card">
                     <div class="flip-card">
@@ -91,13 +90,16 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
                     <h3 class="product-name"><?= $row['name'] ?></h3>
                     <p class="price">$<?= $row['price'] ?></p>
                     <button class="add-btn"
-                        onclick="addToCart('<?= $row['name'] ?>', <?= $row['price'] ?>, '<?= $row['image_url'] ?>')">
-                        Add to Cart
+                    onclick="addToCart(<?= $row['id'] ?>, '<?= $row['name'] ?>', <?= $row['price'] ?>)">
+                    Add to Cart
                     </button>
                 </div>
 
             <?php endwhile; ?>
 
+
+
+        </div>
     </section>
 
 
@@ -121,8 +123,6 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
         © 2026 Edamame. All rights reserved.
     </footer>
 
-<<<<<<< HEAD
-=======
 
 
     <!-- FLOATING CART BUTTON -->
@@ -157,10 +157,12 @@ function toggleCart() {
 }
 
 function addToCart(productId, name, price) {
-    const existing = cart.find(item => item.product_id === productId);
+    price = Number(price);
 
-    if (existing) {
-        existing.quantity += 1;
+    const existingItem = cart.find(item => item.product_id === productId);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
     } else {
         cart.push({
             product_id: productId,
@@ -171,6 +173,7 @@ function addToCart(productId, name, price) {
     }
 
     updateCart();
+    document.getElementById("cartPanel").classList.add("show");
 }
 
 function removeFromCart(index) {
@@ -196,15 +199,16 @@ function updateCart() {
     cartItems.innerHTML = "";
 
     cart.forEach((item, index) => {
-        const lineTotal = item.price * item.quantity;
-        total += lineTotal;
-        count += item.quantity;
+        const itemPrice = Number(item.price);
+        const itemQty = Number(item.quantity);
+        total += itemPrice * itemQty;
+        count += itemQty;
 
         cartItems.innerHTML += `
             <div class="cart-item">
                 <div class="cart-item-info">
                     <strong>${item.name}</strong>
-                    <span>$${item.price} × ${item.quantity}</span>
+                    <span>$${itemPrice} × ${itemQty}</span>
                 </div>
                 <button type="button" onclick="removeFromCart(${index})">Remove</button>
             </div>
@@ -214,16 +218,14 @@ function updateCart() {
     cartCount.textContent = count;
     cartTotal.textContent = total;
 }
-<script>
+
 function checkout() {
     if (cart.length === 0) {
         alert("Your cart is empty.");
         return;
     }
 
-    console.log("Sending cart:", cart);
-
-    fetch("../php/save_cart.php", {
+    fetch("save_cart.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -233,20 +235,32 @@ function checkout() {
     .then(response => response.text())
     .then(data => {
         console.log("PHP response:", data);
-        alert(data);
+
+        try {
+            const result = JSON.parse(data);
+
+            if (result.success) {
+                alert("Cart saved successfully!");
+                cart = [];
+                updateCart();
+                document.getElementById("cartPanel").classList.remove("show");
+            } else {
+                alert(result.message || "Failed to save cart.");
+            }
+        } catch (e) {
+            alert("Server error: " + data);
+        }
     })
     .catch(error => {
         console.error("Fetch error:", error);
-        alert("Fetch failed. Check console.");
+        alert("Something went wrong.");
     });
 }
 </script>
-</script>
 
 
 
 
->>>>>>> 68caf60b44bf2e2b86905a9b7683b0f2a20d1f8c
 </body>
 
 </html>
