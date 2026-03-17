@@ -1,0 +1,196 @@
+/* nav start  */
+/* ===== NAVBAR ===== */
+nav {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 15px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO (LEFT) */
+nav .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* CENTER SECTION */
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* TEXT */
+.nav-center span {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.nav-center strong {
+    color: #fff;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+    background: #e74c3c;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}
+
+/* RIGHT ICON */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right i {
+    font-size: 1.2rem;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+/* nav end  */
+
+
+        .container {
+            max-width: 700px;
+            margin: 48px auto;
+            padding: 0 24px;
+        }
+
+        .page-header { margin-bottom: 32px; }
+        .page-header h1 { font-size: 1.8rem; font-weight: 700; }
+        .page-header p  { color: #666; margin-top: 4px; }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 36px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .alert {
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .alert-success { background: #e8f5e9; color: #2e7d32; }
+        .alert-error   { background: #fdecea; color: #c62828; }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .form-group label span { color: #e53935; }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1.5px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+            background: #fafafa;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            background: white;
+        }
+
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        .image-upload {
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 28px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            position: relative;
+        }
+        .image-upload:hover { border-color: #1a1a1a; background: #fafafa; }
+        .image-upload i { font-size: 2rem; color: #bbb; display: block; margin-bottom: 10px; }
+        .image-upload p { font-size: 0.85rem; color: #888; }
+        .image-upload input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #preview {
+            display: none;
+            max-height: 180px;
+            border-radius: 8px;
+            margin-top: 14px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .divider { border: none; border-top: 1px solid #eee; margin: 28px 0; }
+
+        .form-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+        .btn:hover  { opacity: 0.88; }
+        .btn:active { transform: scale(0.98); }
+        .btn-primary   { background: #1a1a1a; color: black; }
+        .btn-secondary { background: white; color: #1a1a1a; border: 1.5px solid #ddd; }

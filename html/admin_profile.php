@@ -225,6 +225,7 @@ $orders_result = $conn->query("SELECT COUNT(*) as c FROM orders")->fetch_assoc()
             $total_users  = $conn->query("SELECT COUNT(*) as c FROM users")->fetch_assoc()['c'];
             $total_admins = $conn->query("SELECT COUNT(*) as c FROM users WHERE role='admin'")->fetch_assoc()['c'];
             $total_orders = $conn->query("SELECT COUNT(*) as c FROM orders")->fetch_assoc()['c'];
+            $total_products = $conn->query("SELECT COUNT(*) as c FROM products")->fetch_assoc()['c'];
             ?>
             <div class="stat-card users">
                 <i class="fas fa-users"></i>
@@ -234,7 +235,7 @@ $orders_result = $conn->query("SELECT COUNT(*) as c FROM orders")->fetch_assoc()
             <a href="admin_products.php" >
                 <div class="stat-card ">
                     <i class="fa-solid fa-spray-can-sparkles"></i>
-                    <h3><?= $total_admins ?></h3>
+                    <h3><?= $total_products?></h3>
                     <p>products</p>
                 </div>
             </a>

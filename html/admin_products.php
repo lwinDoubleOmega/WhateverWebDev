@@ -92,7 +92,7 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
             gap: 20px;
             margin-bottom: 30px;
         }
-        
+
         .stat-card {
             background: white;
             border-radius: 10px;
@@ -192,6 +192,32 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
         .logout-btn:hover {
             background: #c0392b;
         }
+
+        .add-btn {
+
+
+            display: block;
+            width: 180px;
+            margin-bottom: 15px;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+
+            background: #111;
+            color: #fff;
+
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
     </style>
     <!-- css end -->
 </head>
@@ -225,6 +251,7 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
             $total_users  = $conn->query("SELECT COUNT(*) as c FROM users")->fetch_assoc()['c'];
             $total_admins = $conn->query("SELECT COUNT(*) as c FROM users WHERE role='admin'")->fetch_assoc()['c'];
             $total_orders = $conn->query("SELECT COUNT(*) as c FROM orders")->fetch_assoc()['c'];
+            $total_products = $conn->query("SELECT COUNT(*) as c FROM products")->fetch_assoc()['c'];
             ?>
             <a href="admin_profile.php">
                 <div class="stat-card users">
@@ -234,10 +261,10 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
                 </div>
             </a>
             <a href="admin_products.php">
-                <div class="red" >
+                <div class="red">
                     <div class="stat-card ">
                         <i class="fa-solid fa-spray-can-sparkles" style="color: rgb(250, 0, 0);"></i>
-                        <h3><?= $total_admins ?></h3>
+                        <h3><?= $total_products ?></h3>
                         <p>products</p>
                     </div>
                 </div>
@@ -250,16 +277,24 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
             </div>
             <a href="admin_orders.php">
                 <div class="stat-card orders">
-                    <i class="fa-solid fa-cart-arrow-down" ></i>
+                    <i class="fa-solid fa-cart-arrow-down"></i>
                     <h3><?= $total_orders ?></h3>
                     <p>Orders</p>
                 </div>
             </a>
         </div>
 
-        <!-- Users Table -->
+        <!-- add product button -->
+        <div style="display:flex; justify-content:flex-end; margin-bottom:15px;">
+            <a href="admin-add-product.php">
+                <button class="add-btn">
+                    <i class="fas fa-plus"></i> Add Product
+                </button>
+            </a>
+        </div>
         <div class="section">
-            <h3><i class="fa-solid fa-spray-can-sparkles"></i> All Perfumes</h3>
+            <h3><i class="fa-solid fa-spray-can-sparkles"></i> All Perfumes </h3>
+<!-- Users Table -->
             <table>
                 <thead>
                     <tr>
