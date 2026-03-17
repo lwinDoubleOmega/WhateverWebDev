@@ -5,11 +5,6 @@ error_reporting(E_ALL);
 session_start();
 include "../php/database.php";
 
-// Only admins allowed
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../html/login.html");
-    exit();
-}
 
 // Fetch all users
 $users_result = $conn->query("SELECT id, full_name, email, role FROM users ORDER BY id DESC");
@@ -28,6 +23,7 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/darkmode.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/addtocart.css">
     <script src="../javaScript/script.js"></script>
     <script src="../javaScript/darkmode.js"></script>
     <title>Edamame</title>
@@ -126,6 +122,97 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
     <footer>
         © 2026 Edamame. All rights reserved.
     </footer>
+
+
+
+    <!-- FLOATING CART BUTTON -->
+<div class="cart-float" onclick="toggleCart()">
+    <i class="fas fa-bag-shopping"></i>
+    <span id="cartCount">0</span>
+</div>
+
+<!-- CART PANEL -->
+<div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button onclick="toggleCart()">×</button>
+    </div>
+
+    <div id="cartItems" class="cart-items">
+        <p class="empty-cart">Your cart is empty.</p>
+    </div>
+
+    <div class="cart-footer">
+        <p>Total: <strong>$<span id="cartTotal">0</span></strong></p>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+</div>
+
+
+<script>
+let cart = [];
+
+function toggleCart() {
+    document.getElementById("cartPanel").classList.toggle("show");
+}
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCart();
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function updateCart() {
+    const cartItems = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotal = document.getElementById("cartTotal");
+
+    cartCount.textContent = cart.length;
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = `<p class="empty-cart">Your cart is empty.</p>`;
+        cartTotal.textContent = 0;
+        return;
+    }
+
+    let total = 0;
+    cartItems.innerHTML = "";
+
+    cart.forEach((item, index) => {
+        total += item.price;
+
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <div class="cart-item-info">
+                    <strong>${item.name}</strong>
+                    <span>$${item.price}</span>
+                </div>
+                <button onclick="removeFromCart(${index})">Remove</button>
+            </div>
+        `;
+    });
+
+    cartTotal.textContent = total;
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+    }
+
+    alert("Order placed successfully!");
+    cart = [];
+    updateCart();
+    toggleCart();
+}
+</script>
+
+
 
 
 
