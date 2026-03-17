@@ -13,11 +13,11 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 
 // Fetch all users
 $users_result = $conn->query("SELECT id, full_name, email, role FROM users ORDER BY id DESC");
-
 // Fetch total orders
-$orders_result = $conn->query("SELECT COUNT(*) as c FROM orders")->fetch_assoc();
+$orders_result = $conn->query("SELECT *  FROM orders ORDER BY id DESC");
+// Fetch total products
+$products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,7 +92,7 @@ $orders_result = $conn->query("SELECT COUNT(*) as c FROM orders")->fetch_assoc()
             gap: 20px;
             margin-bottom: 30px;
         }
-
+        
         .stat-card {
             background: white;
             border-radius: 10px;
@@ -226,54 +226,58 @@ $orders_result = $conn->query("SELECT COUNT(*) as c FROM orders")->fetch_assoc()
             $total_admins = $conn->query("SELECT COUNT(*) as c FROM users WHERE role='admin'")->fetch_assoc()['c'];
             $total_orders = $conn->query("SELECT COUNT(*) as c FROM orders")->fetch_assoc()['c'];
             ?>
-            <div class="stat-card users">
-                <i class="fas fa-users"></i>
-                <h3><?= $total_users ?></h3>
-                <p>Total Users</p>
-            </div>
-            <a href="admin_products.php" >
-                <div class="stat-card ">
-                    <i class="fa-solid fa-spray-can-sparkles"></i>
-                    <h3><?= $total_admins ?></h3>
-                    <p>products</p>
+            <a href="admin_profile.php">
+                <div class="stat-card users">
+                    <i class="fas fa-users"></i>
+                    <h3><?= $total_users ?></h3>
+                    <p>Total Users</p>
+                </div>
+            </a>
+            <a href="admin_products.php">
+                <div class="red" >
+                    <div class="stat-card ">
+                        <i class="fa-solid fa-spray-can-sparkles" style="color: rgb(250, 0, 0);"></i>
+                        <h3><?= $total_admins ?></h3>
+                        <p>products</p>
+                    </div>
                 </div>
             </a>
 
             <div class="stat-card admins">
-                <i class="fas fa-user-shield"></i>
+                <i class="fas fa-user-shield "></i>
                 <h3><?= $total_admins ?></h3>
                 <p>Admins</p>
             </div>
-            <div class="stat-card orders">
-                <i class="fa-solid fa-cart-arrow-down" ></i>
-                <h3><?= $total_orders ?></h3>
-                <p>Orders</p>
-            </div>
+            <a href="admin_orders.php">
+                <div class="stat-card orders">
+                    <i class="fa-solid fa-cart-arrow-down" ></i>
+                    <h3><?= $total_orders ?></h3>
+                    <p>Orders</p>
+                </div>
+            </a>
         </div>
 
         <!-- Users Table -->
         <div class="section">
-            <h3><i class="fas fa-users"></i> All Users</h3>
+            <h3><i class="fa-solid fa-spray-can-sparkles"></i> All Perfumes</h3>
             <table>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Full Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
+                        <th>Product Name</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Stock</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($row = $users_result->fetch_assoc()): ?>
+                    <?php while ($row = $products_result->fetch_assoc()): ?>
                         <tr>
                             <td><?= $row['id'] ?></td>
-                            <td><?= htmlspecialchars($row['full_name']) ?></td>
-                            <td><?= htmlspecialchars($row['email']) ?></td>
-                            <td>
-                                <span class="badge <?= $row['role'] === 'admin' ? 'badge-admin' : 'badge-user' ?>">
-                                    <?= ucfirst($row['role']) ?>
-                                </span>
-                            </td>
+                            <td><?= htmlspecialchars($row['name']) ?></td>
+                            <td><?= htmlspecialchars($row['concentration']) ?></td>
+                            <td><?= htmlspecialchars($row['price']) ?></td>
+                            <td><?= htmlspecialchars($row['stock']) ?></td>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
