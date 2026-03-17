@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chatbot | EDAMAME</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/darkmode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../javaScript/about.js"></script>
+    <script src="../javaScript/darkmode.js"></script>
+
+
+
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #e9e3da;
+      color: #2c2c2c;
+    }
+
+    /* NAVBAR */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: #f5f1eb;
+    }
+
+    header h2 {
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #a67c52;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: #2c2c2c;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #a67c52;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 80px 50px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #f5f1eb;
+      padding: 20px;
+      width: 250px;
+      border-radius: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f5f1eb;
+      margin-top: 50px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+    <nav>
+        <div class="logo"><strong>EDAMAME</strong></div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="services.html">Fragrances</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-icons">
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"><i
+                    class="fas fa-moon"></i></button>
+            <a href="profile.php">
+                <div class="profile-icon" aria-label="Profile"><i class="fas fa-circle-user"></i></div>
+            </a>
+        </div>
+    </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>AI Fragrance Assistant</h1>
+    <p>
+      Discover your perfect scent with our intelligent chatbot.
+      Get personalized perfume recommendations instantly.
+    </p>
+    <button class="btn" onclick="openChat()">Start Chat</button>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <h2>What Can It Do?</h2>
+
+    <div class="features">
+      <div class="card">
+        <h3>Smart Suggestions</h3>
+        <p>Find perfumes based on your mood and style.</p>
+      </div>
+
+      <div class="card">
+        <h3>Product Info</h3>
+        <p>Check prices, details, and availability instantly.</p>
+      </div>
+
+      <div class="card">
+        <h3>Quick Support</h3>
+        <p>Get answers anytime without waiting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <h2>How It Works</h2>
+    <p>
+      Start a chat, tell us your preference, and get personalized fragrance recommendations.
+      Add your favorite perfume to cart easily.
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <h2>Ready to Find Your Signature Scent?</h2>
+    <button class="btn" onclick="openChat()">Chat Now</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Powered by AI • EDAMAME Perfume</p>
+  </footer>
+
+  <!-- BOTPRESS CHAT -->
+ <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/03/17/07/20260317070411-RXB42I1J.js" defer></script>
+
+
+
+
+</body>
+</html>
