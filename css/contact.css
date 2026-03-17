@@ -50,6 +50,7 @@ nav a:hover{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 40px;
 }
 
 .form-row {
