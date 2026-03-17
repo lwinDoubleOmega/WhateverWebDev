@@ -294,12 +294,13 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
         </div>
         <div class="section">
             <h3><i class="fa-solid fa-spray-can-sparkles"></i> All Perfumes </h3>
-<!-- Users Table -->
+            <!-- Users Table -->
             <table>
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Product Name</th>
+                        <th>Product Picture</th>
                         <th>Type</th>
                         <th>Price</th>
                         <th>Stock</th>
@@ -310,6 +311,13 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
                         <tr>
                             <td><?= $row['id'] ?></td>
                             <td><?= htmlspecialchars($row['name']) ?></td>
+                            <td>
+                                <?php if (!empty($row['image_url'])): ?>
+                                    <img src="<?= htmlspecialchars($row['image_url']) ?>" alt="<?= htmlspecialchars($row['name'] ?? '') ?>" style="width:60px; height:60px; object-fit:cover; border-radius:5px;">
+                                <?php else: ?>
+                                    <span style="color:#aaa; font-size:0.8rem;">No image</span>
+                                <?php endif; ?>
+                            </td>
                             <td><?= htmlspecialchars($row['concentration']) ?></td>
                             <td><?= htmlspecialchars($row['price']) ?></td>
                             <td><?= htmlspecialchars($row['stock']) ?></td>
