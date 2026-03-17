@@ -38,7 +38,7 @@ $user = $result->fetch_assoc();
         <div class="logo"><strong>EDAMAME</strong></div>
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="services.html">Fragrances</a></li>
+            <li><a href="services.php">Fragrances</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="Contact.html">Contact Us</a></li>
         </ul>
