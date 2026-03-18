@@ -1,3 +1,18 @@
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+include "../php/database.php";
+
+// Fetch and group notes by layer
+$perfume_notes_result = $conn->query("SELECT * FROM perfume_notes ORDER BY layer, note_name ASC");
+$notes = ['top' => [], 'heart' => [], 'base' => []];
+while ($row = $perfume_notes_result->fetch_assoc()) {
+    $notes[$row['layer']][] = $row;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,16 +21,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Your Perfume | Scentaris</title>
     <link rel="stylesheet" href="create.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/own_signature_scent.css">
     <link rel="stylesheet" href="../css/darkmode.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../javaScript/own_signature_scent.js"></script>
     <script src="../javaScript/darkmode.js"></script>
-
-
 </head>
 
 <body>
@@ -29,8 +40,9 @@
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
         <div class="nav-icons">
-            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"><i
-                    class="fas fa-moon"></i></button>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
             <a href="profile.php">
                 <div class="profile-icon" aria-label="Profile"><i class="fas fa-circle-user"></i></div>
             </a>
@@ -49,30 +61,45 @@
         <div class="form-group">
             <label>Top Notes</label>
             <select id="topNote">
-                <option value="Citrus">Citrus</option>
-                <option value="Bergamot">Bergamot</option>
-                <option value="Lavender">Lavender</option>
-                <option value="Mint">Mint</option>
+                <?php if (!empty($notes['top'])): ?>
+                    <?php foreach ($notes['top'] as $note): ?>
+                        <option value="<?= htmlspecialchars($note['note_name']) ?>">
+                            <?= htmlspecialchars($note['note_name']) ?> (Intensity: <?= $note['intensity'] ?>)
+                        </option>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <option value="">No top notes available</option>
+                <?php endif; ?>
             </select>
         </div>
 
         <div class="form-group">
             <label>Heart Notes</label>
             <select id="heartNote">
-                <option value="Rose">Rose</option>
-                <option value="Jasmine">Jasmine</option>
-                <option value="Vanilla">Vanilla</option>
-                <option value="Peony">Peony</option>
+                <?php if (!empty($notes['heart'])): ?>
+                    <?php foreach ($notes['heart'] as $note): ?>
+                        <option value="<?= htmlspecialchars($note['note_name']) ?>">
+                            <?= htmlspecialchars($note['note_name']) ?> (Intensity: <?= $note['intensity'] ?>)
+                        </option>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <option value="">No heart notes available</option>
+                <?php endif; ?>
             </select>
         </div>
 
         <div class="form-group">
             <label>Base Notes</label>
             <select id="baseNote">
-                <option value="Musk">Musk</option>
-                <option value="Amber">Amber</option>
-                <option value="Sandalwood">Sandalwood</option>
-                <option value="Oud">Oud</option>
+                <?php if (!empty($notes['base'])): ?>
+                    <?php foreach ($notes['base'] as $note): ?>
+                        <option value="<?= htmlspecialchars($note['note_name']) ?>">
+                            <?= htmlspecialchars($note['note_name']) ?> (Intensity: <?= $note['intensity'] ?>)
+                        </option>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <option value="">No base notes available</option>
+                <?php endif; ?>
             </select>
         </div>
 

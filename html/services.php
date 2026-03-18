@@ -59,7 +59,8 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
     <section class="hero">
         <div class="hero-text">
             <h1>Create Your Signature Scent</h1>
-            <a href="own_signature_scent.html"><button>Start Crafting</button></a>
+            <a href="own_signature_scent.php">
+                <button>Start Crafting</button></a>
         </div>
         <img src="../images/ulysse-pointcheval--j6LLsAehUo-unsplash.jpg" alt="Perfume">
     </section>
