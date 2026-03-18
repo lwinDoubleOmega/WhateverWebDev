@@ -151,100 +151,113 @@ $products_result = $conn->query("SELECT * FROM products ORDER BY id DESC");
 
 
     <script>
-        let cart = [];
+let cart = [];
 
-        function toggleCart() {
-            document.getElementById("cartPanel").classList.toggle("show");
-        }
+function toggleCart() {
+    document.getElementById("cartPanel").classList.toggle("show");
+}
 
-        function addToCart(productId, name, price) {
-            const existing = cart.find(item => item.product_id === productId);
+function addToCart(productId, name, price) {
+    price = Number(price);
 
-            if (existing) {
-                existing.quantity += 1;
-            } else {
-                cart.push({
-                    product_id: productId,
-                    name: name,
-                    price: price,
-                    quantity: 1
-                });
-            }
+    const existingItem = cart.find(item => item.product_id === productId);
 
-            updateCart();
-        }
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            product_id: productId,
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
 
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCart();
-        }
+    updateCart();
+    document.getElementById("cartPanel").classList.add("show");
+}
 
-        function updateCart() {
-            const cartItems = document.getElementById("cartItems");
-            const cartCount = document.getElementById("cartCount");
-            const cartTotal = document.getElementById("cartTotal");
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
 
-            let total = 0;
-            let count = 0;
+function updateCart() {
+    const cartItems = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotal = document.getElementById("cartTotal");
 
-            if (cart.length === 0) {
-                cartItems.innerHTML = `<p class="empty-cart">Your cart is empty.</p>`;
-                cartCount.textContent = 0;
-                cartTotal.textContent = 0;
-                return;
-            }
+    let total = 0;
+    let count = 0;
 
-            cartItems.innerHTML = "";
+    if (cart.length === 0) {
+        cartItems.innerHTML = `<p class="empty-cart">Your cart is empty.</p>`;
+        cartCount.textContent = 0;
+        cartTotal.textContent = 0;
+        return;
+    }
 
-            cart.forEach((item, index) => {
-                const lineTotal = item.price * item.quantity;
-                total += lineTotal;
-                count += item.quantity;
+    cartItems.innerHTML = "";
 
-                cartItems.innerHTML += `
+    cart.forEach((item, index) => {
+        const itemPrice = Number(item.price);
+        const itemQty = Number(item.quantity);
+        total += itemPrice * itemQty;
+        count += itemQty;
+
+        cartItems.innerHTML += `
             <div class="cart-item">
                 <div class="cart-item-info">
                     <strong>${item.name}</strong>
-                    <span>$${item.price} × ${item.quantity}</span>
+                    <span>$${itemPrice} × ${itemQty}</span>
                 </div>
                 <button type="button" onclick="removeFromCart(${index})">Remove</button>
             </div>
         `;
-            });
+    });
 
-            cartCount.textContent = count;
-            cartTotal.textContent = total;
-        }
+    cartCount.textContent = count;
+    cartTotal.textContent = total;
+}
 
+function checkout() {
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+    }
 
-        function checkout() {
-            if (cart.length === 0) {
-                alert("Your cart is empty.");
-                return;
+    fetch("save_cart.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ cart: cart })
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("PHP response:", data);
+
+        try {
+            const result = JSON.parse(data);
+
+            if (result.success) {
+                alert("Cart saved successfully!");
+                cart = [];
+                updateCart();
+                document.getElementById("cartPanel").classList.remove("show");
+            } else {
+                alert(result.message || "Failed to save cart.");
             }
-
-            console.log("Sending cart:", cart);
-
-            fetch("../php/save_cart.php", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        cart: cart
-                    })
-                })
-                .then(response => response.text())
-                .then(data => {
-                    console.log("PHP response:", data);
-                    alert(data);
-                })
-                .catch(error => {
-                    console.error("Fetch error:", error);
-                    alert("Fetch failed. Check console.");
-                });
+        } catch (e) {
+            alert("Server error: " + data);
         }
-    </script>
+    })
+    .catch(error => {
+        console.error("Fetch error:", error);
+        alert("Something went wrong.");
+    });
+}
+</script>
 
 
 
